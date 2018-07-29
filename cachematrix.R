@@ -3,13 +3,17 @@
 
 ## create a matrix
 
-makeCacheMatrix <- function(x = matrix()) {c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2
+x<- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2
 
-}
+)
 
-
+##      [,1]  [,2]
+##[1,]  0.50 -1.00
+##[2,] -0.25  0.75
 ## get the inverse of the matrix above
 
-cacheSolve <- function(x, ...) {c(6,2,8,4), nrow = 2, ncol = 2
+cacheSolve <- solve(x) 
         ## Return a matrix that is the inverse of 'x'
-}
+##      [,1] [,2]
+##[1,]    6    8
+##[2,]    2    4
