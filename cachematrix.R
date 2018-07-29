@@ -1,9 +1,9 @@
-# makeCacheMatrix and cacheSolve allow for caching the inverse of a matrix to eliminate redundancy
 
 
 
 
-## makeCacheMatrix sets up the inverse caching for setting and getting of the matrix and inverse matrix
+
+## makeCacheMatrix 
 
 
 
@@ -12,13 +12,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
   inv <- NULL
 
-  set <- function(y) {
+  set <- function(m) {
 
-    x <<- y
+    x <<- m
 
-    inv <<- NULL
-
-  }
+    inv <<- NULL}
 
   get <- function() x
 
@@ -30,9 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
        setinv = setinv,
 
-       getinv = getinv)
-
-}
+       getinv = getinv)}
 
 
 
@@ -40,9 +36,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-## cacheSolve first checks to see if the inverse is already cached and returns it if so
+## cacheSolve first checks to see if the inverse has already been cached and returns it if so
 
-## otherwise it runs the solve and caches the result for future use
+## otherwise it will run the solve function and caches the result for further use
 
 
 
@@ -53,11 +49,9 @@ cacheSolve <- function(x, ...) {
 
   if(!is.null(inv)) {
 
-    message("getting cached data")
+    message("cached data")
 
-    return(inv)
-
-  }
+    return(inv) }
 
   data <- x$get()
 
@@ -65,7 +59,5 @@ cacheSolve <- function(x, ...) {
 
   x$setinv(inv)
 
-  inv
-
-}
+  inv}
 
