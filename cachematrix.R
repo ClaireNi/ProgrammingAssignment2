@@ -12,7 +12,7 @@ x<- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2
 ##[2,] -0.25  0.75
 ## get the inverse of the matrix above
 
-cacheSolve <- solve(x) 
+solve(x) 
         ## Return a matrix that is the inverse of 'x'
 ##      [,1] [,2]
 ##[1,]    6    8
